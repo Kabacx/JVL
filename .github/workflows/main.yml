@@ -62,4 +62,4 @@ jobs:
           # GitHub API Token
           github_token: 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
           # Additional parameters for AST scan
-          additional_params: --scan-types sca # optional, default is 
+          additional_params: # optional, default is 
