@@ -48,7 +48,7 @@ jobs:
           # Secret key for AST portal authentication
           cx_client_secret: 2c0387f1-2e21-46be-a213-7c193cf32e03
           # Select a Checkmarx Project Name
-          project_name: KB_test # optional, default is ${{ github.repository }}
+          project_name: KB_JVL_AST_GitHub_Action # optional, default is ${{ github.repository }}
           # Branch name
           branch: main
           # GitHub API Token
