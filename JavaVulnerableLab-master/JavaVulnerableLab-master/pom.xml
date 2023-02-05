@@ -11,6 +11,7 @@
 	<artifactId>auth-service</artifactId>
 	<version>1.0.76-SNAPSHOT</version>
 	<name>auth-service</name>
+	
 	<description>Demo project for Spring Boot</description>
 	  <dependencies>
 	  <dependency>
