@@ -58,6 +58,6 @@ jobs:
           # Branch name
           branch: main
           # GitHub API Token
-          github_token: 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
+          github_token: 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
           # Additional parameters for AST scan
           additional_params: # optional, default is 
