@@ -18,9 +18,9 @@ jobs:
           cx_tenant: dw_dp_account
           base_uri: https://eu.ast.checkmarx.net
           cx_client_id: KB_Github
-          cx_client_secret: 2c0387f1-2e21-46be-a213-7c193cf32e03  
+          cx_client_secret: TXezSFHGqjfqn6GdAHGs6SLYLAwOJQgD  
           #additional_params: --apikey ${{ secrets.apisecret }}
-          additional_params: --apikey ${{ secrets.apisecret }} --debug --sca-filter !**/**,web/**  
+          additional_params: --apikey 0f03f8c1-e521-417a-b82c-d580cd92337d --debug --sca-filter !**/**,web/**  
           #additional_params: --report-format sarif
           branch: main
           github_token: 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
