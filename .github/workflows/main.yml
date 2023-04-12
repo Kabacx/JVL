@@ -22,3 +22,5 @@ jobs:
           #additional_params: --apikey ${{ secrets.apisecret }}
           additional_params: --apikey ${{ secrets.apisecret }} --debug --sca-filter !**/**,web/**  
           #additional_params: --report-format sarif
+          branch: main
+          github_token: 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
