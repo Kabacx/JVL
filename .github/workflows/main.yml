@@ -17,8 +17,8 @@ jobs:
           project_name: KB_gha_JVL
           cx_tenant: dw_dp_account
           base_uri: https://eu.ast.checkmarx.net
-          #cx_client_id: KB_Github
-          #cx_client_secret:2c0387f1-2e21-46be-a213-7c193cf32e03  
+          cx_client_id: KB_Github
+          cx_client_secret: 2c0387f1-2e21-46be-a213-7c193cf32e03  
           #additional_params: --apikey ${{ secrets.apisecret }}
           additional_params: --apikey ${{ secrets.apisecret }} --debug --sca-filter !**/**,web/**  
           sast: presetName:'Checkmarx Default'
