@@ -15,7 +15,7 @@ jobs:
         uses: checkmarx/ast-github-action@main #Github Action version
         with:
           project_name: KB_gha_JVL
-          cx_tenant: dw_dp_account
+          cx_tenant: dp_wp_account
           base_uri: https://eu.ast.checkmarx.net
           cx_client_id: KB_Github
           cx_client_secret: TXezSFHGqjfqn6GdAHGs6SLYLAwOJQgD  
