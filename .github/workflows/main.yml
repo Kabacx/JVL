@@ -22,7 +22,6 @@ jobs:
           #additional_params: --apikey ${{ secrets.apisecret }}
           #additional_params: --apikey 0f03f8c1-e521-417a-b82c-d580cd92337d --debug --sca-filter !**/**,web/**  
           additional_params: --DEBUG, --sca-filter '!JavaVulnerableLab-master/**'
-          #additional_params: --report-format sarif
-          
+          #additional_params: --report-format sarif      
           branch: main
           github_token: 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
