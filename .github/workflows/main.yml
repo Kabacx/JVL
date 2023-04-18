@@ -21,7 +21,7 @@ jobs:
           cx_client_secret: TXezSFHGqjfqn6GdAHGs6SLYLAwOJQgD  
           #additional_params: --apikey ${{ secrets.apisecret }}
           #additional_params: --apikey 0f03f8c1-e521-417a-b82c-d580cd92337d --debug --sca-filter !**/**,web/**  
-          additional_params: --debug --sca-filter '!JavaVulnerableLab-master/JavaVulnerableLab-master/src/**'
+          additional_params: --debug, --sca-filter '!src/**'
           #additional_params: --report-format sarif
           branch: main
           github_token: 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
