@@ -38,5 +38,6 @@ jobs:
             --client-id  "KB_Github" \
             --client-secret  xqPamnKUF9HtJHN2NO3f6o7XQdfBj4JR \
             --sca-resolver ./ScaResolver \
-            --sca-resolver-params "--log-level Debug"
+            --sca-resolver-params "--log-level Debug" \
+            --debug
      
