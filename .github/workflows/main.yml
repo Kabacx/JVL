@@ -9,8 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -20,13 +19,9 @@ jobs:
           wget https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz
           tar -xzvf ScaResolver-linux64.tar.gz
           rm -rf ScaResolver-linux64.tar.gz  
-      - name: Checkmarx One CLI Action
-        uses: checkmarx/ast-github-action@main #Github Action version
-        with:
-          - name: Install Maven, NPM, ... # Add any necessary package management
-        run: |
+       - name: Install Maven, NPM, ... # Add any necessary package management
+         run: |
           sudo apt install maven npm
-
       - name: Run Checkmarx AST CLI Scan
         run: |
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
