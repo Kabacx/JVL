@@ -15,6 +15,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Download SCA Resolver
+        run: |
+          wget https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-win64.zip
+          tar -xzvf ScaResolver-win64.zip
+          rm -rf ScaResolver-win64.zip    
       - name: Checkmarx One CLI Action
         uses: checkmarx/ast-github-action@main #Github Action version
         with:
