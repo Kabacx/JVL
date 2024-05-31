@@ -15,23 +15,31 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Download SCA Resolver
-        run: |
-          wget https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-win64.zip
-          tar -xzvf ScaResolver-win64.zip
-          rm -rf ScaResolver-win64.zip    
+       - name: Download SCA Resolver
+         run: |
+          wget https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz
+          tar -xzvf ScaResolver-linux64.tar.gz
+          rm -rf ScaResolver-linux64.tar.gz  
       - name: Checkmarx One CLI Action
         uses: checkmarx/ast-github-action@main #Github Action version
         with:
-          project_name: KB_gha_JVL
-          cx_tenant: dp_wp_account
-          base_uri: https://eu.ast.checkmarx.net
-          cx_client_id: KB_Github
-          cx_client_secret: TXezSFHGqjfqn6GdAHGs6SLYLAwOJQgD  
-          #additional_params: --apikey ${{ secrets.apisecret }}
-          #additional_params: --apikey 0f03f8c1-e521-417a-b82c-d580cd92337d --debug --sca-filter !**/**,web/**  
-          #additional_params: --DEBUG, --sca-filter '!JavaVulnerableLab-master/**'
-          #additional_params: --report-format sarif      
-          additional_params: --sca-resolver
-          branch: main
+          - name: Install Maven, NPM, ... # Add any necessary package management
+        run: |
+          sudo apt install maven npm
+
+      - name: Run Checkmarx AST CLI Scan
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          /home/linuxbrew/.linuxbrew/bin/brew install checkmarx/ast-cli/ast-cli
+          /home/linuxbrew/.linuxbrew/Cellar/ast-cli/*/bin/cx \
+            scan create \
+            -s . \
+            --agent GitHub \
+            --project-name KB_GHA_JVL_Resolver
+            --branch main
+            --base-uri ${{ secrets.CX_BASE_URI }} \
+            --tenant dp_wp_account
+            --client-id  KB_Github
+            --client-secret  xqPamnKUF9HtJHN2NO3f6o7XQdfBj4JR
+            --sca-resolver ./ScaResolver
           github_token: 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
