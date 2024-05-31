@@ -30,10 +30,10 @@ jobs:
             scan create 
             -s . 
             --agent GitHub 
-            --project-name "KB_GHA_JVL_Resolver" 
             --branch main 
             --base-uri https://eu.ast.checkmarx.net 
             --tenant "dp_wp_account" 
+            --project-name KB_GHA_JVL_Resolver 
             --client-id  "KB_Github" 
             --client-secret  xqPamnKUF9HtJHN2NO3f6o7XQdfBj4JR 
             --sca-resolver ./ScaResolver 
