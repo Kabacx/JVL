@@ -32,7 +32,7 @@ jobs:
             --agent GitHub \
             --project-name KB_GHA_JVL_Resolver
             --branch main
-            --base-uri ${{ secrets.CX_BASE_URI }} \
+            --base-uri https://eu.ast.checkmarx.net
             --tenant dp_wp_account
             --client-id  KB_Github
             --client-secret  xqPamnKUF9HtJHN2NO3f6o7XQdfBj4JR
