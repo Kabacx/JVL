@@ -31,12 +31,12 @@ jobs:
             -s . \
             --agent GitHub \
             --branch main \
-            --scan-types sca
+            --scan-types sca \
             --base-uri https://eu.ast.checkmarx.net \
             --tenant dp_wp_account \
             --project-name KB_GHA_JVL_Resolver1 \
             --client-id  "KB_Github" \
             --client-secret  xqPamnKUF9HtJHN2NO3f6o7XQdfBj4JR \
             --sca-resolver ./ScaResolver \
-            --sca-resolver-params "--log-level Debug --ignore-dev-dependencies"
+            --sca-resolver-params "--log-level Debug"
      
