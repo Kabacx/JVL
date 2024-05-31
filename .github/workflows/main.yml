@@ -27,14 +27,14 @@ jobs:
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
           /home/linuxbrew/.linuxbrew/bin/brew install checkmarx/ast-cli/ast-cli
           /home/linuxbrew/.linuxbrew/Cellar/ast-cli/*/bin/cx \
-            scan create 
-            -s . 
-            --agent GitHub 
-            --branch main 
-            --base-uri https://eu.ast.checkmarx.net 
-            --tenant "dp_wp_account" 
-            --project-name KB_GHA_JVL_Resolver 
-            --client-id  "KB_Github" 
-            --client-secret  xqPamnKUF9HtJHN2NO3f6o7XQdfBj4JR 
+            scan create \
+            -s . \
+            --agent GitHub \
+            --branch main \
+            --base-uri https://eu.ast.checkmarx.net \
+            --tenant dp_wp_account \
+            --project-name KB_GHA_JVL_Resolver \
+            --client-id  "KB_Github" \
+            --client-secret  xqPamnKUF9HtJHN2NO3f6o7XQdfBj4JR \
             --sca-resolver ./ScaResolver 
           github_token: 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
