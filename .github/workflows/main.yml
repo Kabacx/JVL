@@ -15,12 +15,12 @@ jobs:
         with:
           node-version: 20
       - name: Download SCA Resolver
-         run: |
+        run: |
           wget https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz
           tar -xzvf ScaResolver-linux64.tar.gz
           rm -rf ScaResolver-linux64.tar.gz  
-       - name: Install Maven, NPM, ... # Add any necessary package management
-         run: |
+      - name: Install Maven, NPM, ... # Add any necessary package management
+        run: |
           sudo apt install maven npm
       - name: Run Checkmarx AST CLI Scan
         run: |
