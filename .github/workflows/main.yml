@@ -20,13 +20,13 @@ jobs:
           wget https://sca-downloads.s3.amazonaws.com/cli/latest/ScaResolver-linux64.tar.gz
           tar -xzvf ScaResolver-linux64.tar.gz
           rm -rf ScaResolver-linux64.tar.gz  
-     # 2) Run SCA Resolver in offline mode to generate the .cxsca-results.json
+      # 2) Install package manager
+      - name: Install Maven, NPM, ... # Add any necessary package management
+        run: |
+      # 3) Run SCA Resolver in offline mode to generate the .cxsca-results.json
       - name: Run SCA Resolver offline Scan
         run: |
           ./ScaResolver offline -r "./cx-results/.cxsca-results.json" -s . -n KB_GHA_JVL_Resolver --log-level Debug    
-      # 3) Install package manager
-      - name: Install Maven, NPM, ... # Add any necessary package management
-        run: |
           sudo apt install maven npm 
       # 4) Run AST CLI scan with source location -s pointing to the folder containing results file created in the offline step 
       - name: Run Checkmarx AST CLI Scan
