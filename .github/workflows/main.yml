@@ -25,9 +25,9 @@ jobs:
       - name: Install Maven, NPM, ... # Add any necessary package management
         run: |
           sudo apt install maven npm
-      - name: Run SCA Resolver Offline Scan
-        run: |
-          ./ScaResolver offline -r ./cx-results1/.cxsca-results.json -s . -h       
+      #- name: Run SCA Resolver Offline Scan
+      #  run: |
+      #    ./ScaResolver offline -r ./cx-results1/.cxsca-results.json -s . -h       
       - name: Run Checkmarx AST CLI Scan
         run: |
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
