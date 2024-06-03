@@ -21,13 +21,13 @@ jobs:
           rm -rf ScaResolver-linux64.tar.gz  
       - name: Run SCA Resolver Scan
         run: |
-          ./ScaResolver offline -r "./cx-results/.cxsca-results.json" -s . -n vascomaGitHubActions --log-level Debug    
+          ./ScaResolver offline -r "./cx-results1/.cxsca-results.json" -s . -n testGitHubActions --log-level Debug    
       - name: Install Maven, NPM, ... # Add any necessary package management
         run: |
           sudo apt install maven npm
       - name: Run SCA Resolver Offline Scan
         run: |
-          ./ScaResolver offline -r ./cx-results/.cxsca-results.json -s . -h       
+          ./ScaResolver offline -r ./cx-results1/.cxsca-results.json -s . -h       
       - name: Run Checkmarx AST CLI Scan
         run: |
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -40,7 +40,7 @@ jobs:
             --scan-types sca \
             --base-uri https://eu.ast.checkmarx.net \
             --tenant dp_wp_account \
-            --project-name KB_GHA_JVL_Resolver1 \
+            --project-name KB_GHA_JVL_Resolver \
             --client-id  "KB_Github" \
             --client-secret  xqPamnKUF9HtJHN2NO3f6o7XQdfBj4JR \
             --sca-resolver ./ScaResolver \
